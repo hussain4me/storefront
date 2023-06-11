@@ -10,13 +10,14 @@ class Promotion(models.Model):
 
 class Collection(models.Model):
     title = models.CharField(max_length=255)
+    featured_product = models.ForeignKey('Product', on_delete=models.SET_NULL, null=True, related_name='+')
 
 
 class Product(models.Model): 
     # sku = models.CharField(max_length=10, primary_key=True)
     title = models.CharField(max_length=255)
     description = models.TextField()
-    price =models.DecimalField(max_digit=6,decimal_places=2)
+    price = models.DecimalField(max_digits=6,decimal_places=2)
     inventory =models.IntegerField()
     last_update = models.DateTimeField(auto_now=True)
     Collection = models.ForeignKey(Collection, on_delete=models.PROTECT)
