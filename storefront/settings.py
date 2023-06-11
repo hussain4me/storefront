@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+   
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,10 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'playground',
     'debug_toolbar',
+   
 ]
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugtoolbarMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
